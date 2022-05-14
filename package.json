@@ -1,0 +1,26 @@
+{
+  "name": "MFE-starterkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lerna run --scope @typescript/* --parallel start",
+    "build": "lerna run --scope @typescript/* build",
+    "serve": "lerna run --scope @typescript/* --parallel serve",
+    "clean": "lerna run --scope @typescript/* --parallel clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/congmul/MFE-starterkit.git"
+  },
+  "devDependencies": {
+    "lerna": "3.22.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/congmul/MFE-starterkit/issues"
+  },
+  "homepage": "https://github.com/congmul/MFE-starterkit#readme"
+}
