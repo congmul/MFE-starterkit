@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
 const path = require('path');
+const deps = require('./package.json').dependencies;
 
 module.exports = {
   entry: './src/index',
@@ -33,9 +34,20 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'shell',
       remotes: {
-        // app2: 'app2@http://localhost:3002/remoteEntry.js',
+        loginService: 'loginService@http://localhost:3002/remoteEntry.js',
       },
-      shared: ['react', 'react-dom'],
+     shared: [ 
+      {
+        react: {
+        singleton: true,
+        requiredVersion: deps.react,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: deps['react-dom'],
+        }
+      }
+    ]
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',

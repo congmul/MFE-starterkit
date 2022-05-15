@@ -14,7 +14,7 @@
     "url": "git+https://github.com/congmul/MFE-starterkit.git"
   },
   "devDependencies": {
-    "lerna": "3.22.1"
+    "lerna": "^3.22.1"
   },
   "keywords": [],
   "author": "",
