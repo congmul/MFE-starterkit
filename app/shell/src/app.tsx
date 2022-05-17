@@ -4,8 +4,7 @@ const LoginService = React.lazy(() => import('loginService/LoginService'));
 
 const App = () => (
   <div>
-    <h1>SHELL</h1>
-    <React.Suspense fallback="Loading...">
+    <React.Suspense fallback={<div className="spinner-border text-primary" role="status"></div>}>
       <LoginService />
     </React.Suspense>
   </div>
