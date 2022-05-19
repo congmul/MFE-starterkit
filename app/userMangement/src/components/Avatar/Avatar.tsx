@@ -35,7 +35,7 @@ export default ():JSX.Element => {
             sideMenuEl.style.opacity = "0%";
             setTimeout(() => {
                 sideMenuEl.style.display = "none";
-            }, 500)
+            }, 400)
         }
     }
     return(
@@ -46,7 +46,7 @@ export default ():JSX.Element => {
             <div className="side-menu a-avatar-sidemenu-class" id="a-avatar-sidemenu">
                 <div className="header a-avatar-sidemenu-class">
                     <div className="name a-avatar-sidemenu-class">
-                        Welcome, Jehyun Jung
+                        Welcome, [USER NAME]
                     </div>
                 </div>
                 <div className="body a-avatar-sidemenu-class">

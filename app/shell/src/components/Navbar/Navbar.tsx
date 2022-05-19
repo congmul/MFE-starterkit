@@ -7,12 +7,12 @@ import UserAvatar from 'userManagement/UserAvatar';
 export default ():JSX.Element => {
     return(
     <nav className="nav">
-        <div className="nav-header">
+        <a className="nav-header" href="/">
             <div className="logo"></div>
             <div className="title">
                 MFE Starter
             </div>
-        </div>
+        </a>
         <div className="link-wrapper">
             <Link to="/home">Home</Link>
             <Link to="/dashboard">Dash</Link>
