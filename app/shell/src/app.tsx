@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./app.scss";
 
 import Wrapper from "./components/Wrapper/Wrapper";
-import Navbar from './components/Navbar/Navbar';
 const LoginService = React.lazy(() => import('loginService/LoginService'));
 
 const App = ():JSX.Element => (

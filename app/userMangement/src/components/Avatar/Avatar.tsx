@@ -41,15 +41,17 @@ export default ():JSX.Element => {
     return(
         <div className="userAvatar">
             <div className="avatar" id="a-avatar-icon" data-side-menu-visible='false' onClick={onClick}>
-                JJ    
+                JJ {/* TODO: Bring user info from Token */}
             </div>
             <div className="side-menu a-avatar-sidemenu-class" id="a-avatar-sidemenu">
                 <div className="header a-avatar-sidemenu-class">
                     <div className="name a-avatar-sidemenu-class">
+                        {/* TODO: Bring user info from Token */}
                         Welcome, [USER NAME]
                     </div>
                 </div>
                 <div className="body a-avatar-sidemenu-class">
+                    {/* Add more menus on sidemenu */}
                     <div className="menu a-avatar-sidemenu-class">
                         Personal info
                     </div>
@@ -61,6 +63,7 @@ export default ():JSX.Element => {
                     </div>
                 </div>
                 <div className="footer a-avatar-sidemenu-class">
+                    {/* TODO: Add a function that can remove sessions */}
                     <Button><a href="/">Sign out</a></Button>
                 </div>
             </div>

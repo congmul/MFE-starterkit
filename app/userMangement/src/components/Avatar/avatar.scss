@@ -4,7 +4,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: blue;
+        background-color: blue; // Change background color on Avatar
         border-radius: 50%;
         width: 45px;
         height: 45px;
@@ -18,8 +18,10 @@
         position: absolute;
         display: none;
         opacity: 0%;
+        // Can be moved Side-menu to anywhere by top(or bottom) and left(or right).
         bottom: 0px;
         left: 55px;
+        // 
         display: flex;
         flex-direction: column;
         color: rgb(45,45,45);
