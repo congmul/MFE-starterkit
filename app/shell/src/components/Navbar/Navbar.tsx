@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.scss';
 
+import UserAvatar from 'userManagement/UserAvatar';
+
 export default ():JSX.Element => {
     return(
     <nav className="nav">
@@ -16,7 +18,7 @@ export default ():JSX.Element => {
             <Link to="/dashboard">Dash</Link>
         </div>
         <div className="nav-bottom">
-            Avatar
+            <UserAvatar />
         </div>
     </nav>)
 }

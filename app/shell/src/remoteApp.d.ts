@@ -3,3 +3,9 @@ declare module 'loginService/LoginService' {
   
     export default LoginService;
 }
+
+declare module 'userManagement/UserAvatar' {
+    const UserAvatar: React.ComponentType;
+  
+    export default UserAvatar;
+}

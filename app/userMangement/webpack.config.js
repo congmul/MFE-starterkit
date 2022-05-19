@@ -10,8 +10,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    historyApiFallback: true,
-    port: 3001,
+    port: 3003,
   },
   output: {
     publicPath: 'auto',
@@ -37,23 +36,24 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'shell',
-      remotes: {
-        loginService: 'loginService@http://localhost:3002/remoteEntry.js',
-        userManagement: 'userManagement@http://localhost:3003/remoteEntry.js'
+      name: 'userManagement',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './UserManagement': './src/app.tsx',
+        './UserAvatar': './src/components/Avatar/Avatar.tsx'
       },
-     shared: [ 
-      {
-        react: {
-        singleton: true,
-        requiredVersion: deps.react,
-        },
-        'react-dom': {
+      shared: [ 
+        {
+          react: {
           singleton: true,
-          requiredVersion: deps['react-dom'],
+          requiredVersion: deps.react,
+          },
+          'react-dom': {
+            singleton: true,
+            requiredVersion: deps['react-dom'],
+          }
         }
-      }
-    ]
+      ]
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',

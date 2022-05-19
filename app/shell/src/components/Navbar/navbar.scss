@@ -17,7 +17,7 @@
         .title{
             text-align: center;
             color: grey;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             margin-top: 0.5rem;
         }
     }
@@ -31,5 +31,8 @@
     .nav-bottom{
         flex: 0 0 160px;
         padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 }

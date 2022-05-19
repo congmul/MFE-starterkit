@@ -1,0 +1,62 @@
+.userAvatar{
+    position: relative;
+    .avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        color: white;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .side-menu{
+        position: absolute;
+        display: none;
+        opacity: 0%;
+        bottom: 0px;
+        left: 55px;
+        display: flex;
+        flex-direction: column;
+        color: rgb(45,45,45);
+        background-color: white;
+        box-shadow: 0px 0px 10px rgb(220, 220, 220);
+        width: 250px;
+        padding: 12px;
+        transition: all 0.5s ease-out;
+        .header{
+            padding: 0px 0px 12px 0px;
+            border-bottom: 1px solid rgb(230, 230, 230);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .body{
+            flex:1 0 auto;
+            .menu{
+                padding: 5px 12px;
+                &:hover{
+                    background-color: rgb(245, 245, 245);
+                    cursor: pointer;
+                }
+            }
+        }
+        .footer{
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgb(230, 230, 230);
+            display: flex;
+            justify-content: center;
+            button{
+                font-size: 14px;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
