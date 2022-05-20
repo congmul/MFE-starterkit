@@ -9,12 +9,12 @@ const UserAvatar = RemoteWrapper(React.lazy(() => import('userManagement/UserAva
 export default ():JSX.Element => {
     return(
     <nav className="nav">
-        <a className="nav-header" href="/home">
+        <Link className="nav-header" to="/home">
             <div className="logo"></div>
             <div className="title">
                 MFE Starter
             </div>
-        </a>
+        </Link>
         <div className="link-wrapper">
             <Link to="/home">Home</Link>
             <Link to="/dashboard">Dash</Link>

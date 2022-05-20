@@ -7,6 +7,7 @@ import "./app.scss";
 import RemoteWrapper from './components/RemoteWrapper/RemoteWrapper';
 import Wrapper from "./components/Wrapper/Wrapper";
 const LoginService = RemoteWrapper(React.lazy(() => import('loginService/LoginService')));
+const Dashboard = RemoteWrapper(React.lazy(() => import('dashboard/Dashboard')))
 
 const App = ():JSX.Element => (
   <BrowserRouter>
@@ -14,7 +15,7 @@ const App = ():JSX.Element => (
           <Route path="/" element={<LoginService />} />
           <Route element={<Wrapper />}>
               <Route path="/home" element={<h1>Home page</h1>} />
-              <Route path="/dashboard" element={<h1>Home page 2</h1>} /> 
+              <Route path="/dashboard" element={<Dashboard />} /> 
           </Route>
       </Routes>
   </BrowserRouter>

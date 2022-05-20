@@ -25,7 +25,7 @@ class ErrorBoundary extends React.Component {
       }
   
       return (
-            <React.Suspense fallback={this.props.delayed || <div className="spinner-border text-primary" role="status"></div>}>
+            <React.Suspense fallback={<div style={{"textAlign":"center"}}>{this.props.delayed || <div className="spinner-border text-primary" role="status"></div>}</div>}>
                 {this.props.children}
             </React.Suspense>    
           ); 

@@ -9,3 +9,9 @@ declare module 'userManagement/UserAvatar' {
   
     export default UserAvatar;
 }
+
+declare module 'dashboard/Dashboard' {
+    const Dashboard: React.ComponentType;
+  
+    export default Dashboard;
+}
