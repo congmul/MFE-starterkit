@@ -2,7 +2,9 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.scss';
 
-import UserAvatar from 'userManagement/UserAvatar';
+import RemoteWrapper from '../RemoteWrapper/RemoteWrapper';
+
+const UserAvatar = RemoteWrapper(React.lazy(() => import('userManagement/UserAvatar')));
 
 export default ():JSX.Element => {
     return(
@@ -18,7 +20,7 @@ export default ():JSX.Element => {
             <Link to="/dashboard">Dash</Link>
         </div>
         <div className="nav-bottom">
-            <UserAvatar />
+            <UserAvatar error={"Error"} />
         </div>
     </nav>)
 }

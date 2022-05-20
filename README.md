@@ -9,3 +9,58 @@
 - shell (host): a Webpack build that is initialized first during a page load. It will consume MFEs.
 - remote: another Webpack build. it will be consumed by a shell
 - bi-directional-shell: It will consume MFEs and also be consumed by a shell.
+
+## Error Handling
+ - a MFE error shouldn't break the whole app. To solve this problem we can use "error boundary" in React.
+ - To create an "error boundary", add it on Shell(or Host) application's app.tsx file.
+
+### Usage
+ ```js
+ import * as React from 'react';
+
+class ErrorBoundary extends React.Component {
+    state:{ hasError: Boolean}
+    props: any
+    constructor(props: any) {
+      super(props);
+      this.state = { hasError: false };
+    }
+  
+    static getDerivedStateFromError(error: any) {
+      // Update state so the next render will show the fallback UI.
+      return { hasError: true };
+    }
+  
+    componentDidCatch(error: any, errorInfo: any) {
+      // You can also log the error to an error reporting service
+      // logErrorToMyService(error, errorInfo);
+    }
+  
+    render() {
+      if (this.state.hasError) {
+        // You can render any custom fallback UI
+        return this.props.error || <div>Loading Error</div>;
+      }
+  
+      return (
+            <React.Suspense fallback={this.props.delayed || <></>}>
+                {this.props.children}
+            </React.Suspense>    
+          ); 
+    }
+}
+
+// RemoteWrapper
+export default (Component: any) => ({ error, delayed, ...props}:any):JSX.Element => (
+  <ErrorBoundary error={error} delayed={delayed}>
+    <Component {...props} />
+  </ErrorBoundary>
+)
+ ```
+ ```js
+    import RemoteWrapper from '../RemoteWrapper/RemoteWrapper';
+
+    const UserAvatar = RemoteWrapper(React.lazy(() => import('userManagement/UserAvatar')));
+
+    <UserAvatar error={"Error"} delayed={"Loading..."} />
+ ```
