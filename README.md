@@ -62,5 +62,5 @@ export default (Component: any) => ({ error, delayed, ...props}:any):JSX.Element
 
     const UserAvatar = RemoteWrapper(React.lazy(() => import('userManagement/UserAvatar')));
 
-    <UserAvatar error={"Error"} delayed={"Loading..."} />
+    <UserAvatar error={"Error"} delayed={"Loading..."} />  // We can pass props. {err, delayed, props that the Component need}
  ```
