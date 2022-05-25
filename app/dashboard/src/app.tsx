@@ -4,9 +4,11 @@ import './app.scss';
 
 import { MetricsBoard } from './components/MetricsBoard/MetricsBoard';
 
+const MetricsForm = React.lazy(() => import('metricsForm/MetricsForm'))
+
 export default ():JSX.Element => {
 
   return(
-   <div><MetricsBoard /></div>
+   <div><MetricsForm /></div>
   )
 }

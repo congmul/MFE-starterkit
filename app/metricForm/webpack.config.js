@@ -10,7 +10,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    port: 3004,
+    port: 3005,
   },
   output: {
     publicPath: 'auto',
@@ -36,13 +36,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'dashboard',
+      name: 'metricsForm',
       filename: 'remoteEntry.js',
-      remotes: {
-        metricsForm: 'metricsForm@http://localhost:3005/remoteEntry.js'
-       },
       exposes: {
-        './Dashboard': './src/app.tsx'
+        './MetricsForm': './src/app.tsx'
       },
       shared: [ 
         {
