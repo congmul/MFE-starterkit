@@ -1,0 +1,7 @@
+.form-wrapper{
+    display: flex;
+    justify-content: space-around;
+    .form {
+        flex: 0 0 50%;
+    }
+}

@@ -1,55 +1,25 @@
 import * as React from 'react';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import './metricsBoard.scss';
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top' as const,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
-    },
-  },
-};
+import Barchart from '../Barchart/Barchart';
+import Linechart from '../Linechart/Linechart';
+import Piechart from '../Piechart/Piechart';
+import Radarchart from '../Radarchart/Radarchart';
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => 5),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => 5),
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
-
-export function MetricsBoard() {
-  return <Bar options={options} data={data} />;
+export function MetricsBoard():JSX.Element {
+  return <div className="chart-wrapper">
+    <div className="chart">
+      <Barchart />
+    </div>
+    <div className="chart">
+      <Linechart />
+    </div>
+    <div className="chart">
+      <Piechart />
+    </div>
+    <div className="chart">
+      <Radarchart />
+    </div>
+  </div>;
 }

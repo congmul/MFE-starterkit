@@ -8,7 +8,17 @@ const MetricsForm = React.lazy(() => import('metricsForm/MetricsForm'))
 
 export default ():JSX.Element => {
 
-  return(
-   <div><MetricsForm /></div>
-  )
+  return(<>
+    <div className="form-wrapper">
+      <div className="form">
+        <MetricsForm />
+      </div>
+      <div className="form">
+        <h1>Angular Form</h1>
+      </div>
+    </div>
+    <div>
+      <MetricsBoard />
+    </div>
+  </>)
 }
