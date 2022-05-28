@@ -64,3 +64,6 @@ export default (Component: any) => ({ error, delayed, ...props}:any):JSX.Element
 
     <UserAvatar error={"Error"} delayed={"Loading..."} />  // We can pass props. {err, delayed, props that the Component need}
  ```
+
+ ## Angular Remote MFE on React Shell MFE
+ - 
