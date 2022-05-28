@@ -74,3 +74,46 @@ export default (Component: any) => ({ error, delayed, ...props}:any):JSX.Element
  ```
 
  ### Basic Environment
+ 1. Add scritType in webpack.config.js
+ ```js
+ output: {
+    uniqueName: "angularMfe",
+    publicPath: "auto",
+    scriptType : "text/javascript"
+  },
+ ```
+
+ 2. Create loadApp.ts in src folder
+ ```js
+  import "zone.js";
+  import { enableProdMode } from '@angular/core';
+  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+  import { AppModule } from './app/app.module';
+  import { environment } from './environments/environment';
+
+  if (environment.production) {
+    enableProdMode();
+  }
+
+  const mount = ()=>{
+    platformBrowserDynamic().bootstrapModule(AppModule)
+      .catch(err => console.error(err));
+  }
+
+  export{mount}
+```
+3. Add loadApp.ts in tsconfig.app.json
+```js
+"files": [
+    "src/main.ts",
+    "src/polyfills.ts",
+    "src/loadApp.ts"
+  ],
+```
+4. in exposes
+```js
+exposes: {
+          './AngularMfe':'./src/loadApp.ts',
+        }, 
+```

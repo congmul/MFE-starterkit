@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "angularMfe",
-    publicPath: "auto"
+    publicPath: "auto",
+    scriptType : "text/javascript"
   },
   optimization: {
     runtimeChunk: false
@@ -29,11 +30,11 @@ module.exports = {
         library: { type: "module" },
 
         // For remotes (please adjust)
-        // name: "angularMfe",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './/src/app/app.component.ts',
-        // },        
+        name: "angularMfe",
+        filename: "remoteEntry.js",
+        exposes: {
+          './AngularMfe':'./src/loadApp.ts',
+        },        
         
         // For hosts (please adjust)
         // remotes: {
