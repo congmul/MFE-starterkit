@@ -66,4 +66,11 @@ export default (Component: any) => ({ error, delayed, ...props}:any):JSX.Element
  ```
 
  ## Angular Remote MFE on React Shell MFE
- - 
+ 
+ ### Command
+ ```js
+  ng new [ANGULAR-MFE-NAME]
+  ng add @angular-architects/module-federation  // in [ANGULAR-MFE-NAME] folder
+ ```
+
+ ### Basic Environment
