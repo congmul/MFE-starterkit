@@ -39,7 +39,8 @@ module.exports = {
       name: 'dashboard',
       filename: 'remoteEntry.js',
       remotes: {
-        metricsForm: 'metricsForm@http://localhost:3005/remoteEntry.js'
+        metricsForm: 'metricsForm@http://localhost:3005/remoteEntry.js',
+        angularMfe: 'angularMfe@http://localhost:3006/remoteEntry.js'
        },
       exposes: {
         './Dashboard': './src/app.tsx'

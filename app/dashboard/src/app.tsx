@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.scss';
 
 import { MetricsBoard } from './components/MetricsBoard/MetricsBoard';
+import AngularMfe from './components/AngularMfe/AngularMfe';
 
 const MetricsForm = React.lazy(() => import('metricsForm/MetricsForm'))
 
@@ -14,7 +15,7 @@ export default ():JSX.Element => {
         <MetricsForm />
       </div>
       <div className="form">
-        <h1>Angular Form</h1>
+        <AngularMfe />
       </div>
     </div>
     <div>

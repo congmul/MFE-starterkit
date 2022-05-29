@@ -3,3 +3,5 @@ declare module 'metricsForm/MetricsForm'{
   
     export default MetricsForm;
 }
+
+declare module 'angularMfe/AngularMfe';

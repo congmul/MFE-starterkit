@@ -1,5 +1,5 @@
 {
-  "name": "angular-mfe",
+  "name": "@mfe-starter-kit/angular-mfe",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
