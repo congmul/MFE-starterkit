@@ -10,6 +10,14 @@
 - remote: another Webpack build. it will be consumed by a shell
 - bi-directional-shell: It will consume MFEs and also be consumed by a shell.
 
+## Structure
+- Shell: React app ```localhost:3001```
+  - loginService: React app ```localhost:3002```
+  - userManagement, Profile: React app ```localhost:3003```
+  - dashboard: React app ```localhost:3004```
+    - metricsForm: React app ```localhost:3005```
+    - angularMfe: Angular app ```localhost:3006```
+
 ## Error Handling
  - a MFE error shouldn't break the whole app. To solve this problem we can use "error boundary" in React.
  - To create an "error boundary", add it on Shell(or Host) application's app.tsx file.
