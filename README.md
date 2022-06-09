@@ -10,7 +10,7 @@
 - remote: another Webpack build. it will be consumed by a shell
 - bi-directional-shell: It will consume MFEs and also be consumed by a shell.
 
-## Structure
+## Application Structure
 - Shell: React app ```localhost:3001```
   - loginService: React app ```localhost:3002```
   - userManagement, Profile: React app ```localhost:3003```
